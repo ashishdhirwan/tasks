@@ -1,0 +1,109 @@
+IMPORTANT
+
+brigade.js uses brigade-worker hence brigadeir module is already installed now that i am using brigadier outside brigade.js like link , build etc hence i have to install brigadier too
+
+
+
+$ git commit --allow-empty -m “Dummy commit”
+$ git tag -a 1.0.0 -m ‘nothing here’
+$ git push --tags origin master
+
+
+# Get new tags from the remote
+$ git fetch --tags
+
+# Get the latest tag name
+$ latestTag=$(git describe --tags `git rev-list --tags --max-count=1`)
+
+# Checkout the latest tag
+$ git checkout $latestTag
+
+
+=========================================
+kubectl get pod --sort-by=.status.startTime
+=========================================
+
+git describe --tags $(git rev-list --tags --max-count=1)
+
+'sed -i "s/tag.*/tag: "$latestTag"/" values.yaml',
+
+============================================================
+
+"wget -q -O gitversion https://github.com/screwdriver-cd/gitversion/releases/download/v1.1.1/gitversion_linux_amd64",
+"chmod u+x ./gitversion",
+"git fetch --tags -q",
+           `./gitversion  bump auto && ./gitversion show > pipeline_app_version.txt;,
+           `
+           "git push --tags >/dev/null 2>&1"
+
+
+
+'echo https://ashishdhirwan:dhirwan10@github.com > .git-credentials',
+    "git config credential.helper 'store --file .git-credentials'",
+    "git remote add origin https://github.com/ashishdhirwan/practice.git",
+    "wget -q -O gitversion https://github.com/screwdriver-cd/gitversion/releases/download/v1.1.1/gitversion_linux_amd64",
+    "chmod u+x ./gitversion",
+    "git fetch --tags -q",
+    "./gitversion  bump auto && ./gitversion show > pipeline_app_version.txt",
+    "git push origin --tags",
+============================================================
+
+
+
+const { events, Job, Group } = require('brigadier')
+
+events.on("push", async () => {
+
+  let j = new Job("hello-world","dhirwanashish/asd-devops:v1");
+  j.privileged = true;
+  
+  j.env = {
+    DOCKER_DRIVER: "overlay"
+  }
+  j.tasks = [
+    "sleep 10",
+    "echo entered",
+    "gcloud info",
+    "echo Hello World!",
+    "echo now initializing",
+    "git version",
+    "echo gitiiiiiiiiiiiiiiiiiiiiiing",
+    "git describe --tags $(git rev-list --tags --max-count=1)",
+    "git fetch --tags",
+    "latestTag=$(git describe --tags `git rev-list --tags --max-count=1`)",
+    "git checkout $latestTag",
+    //"GIT_COMMIT=git rev-parse HEAD",
+    //"echo hello world 2",
+    //"NEEDS_TAG= git describe --contains $GIT_COMMIT",
+    //"echo $NEEDS_TAG",
+    "ls -lart",
+    "dockerd-entrypoint.sh &",
+    "gcloud auth configure-docker",
+    "echo $(pwd)",
+    "ls -lart",
+    //"helm init",
+    "helm version",
+    "helm ls",
+    "echo helm running",
+    "echo $(pwd)",
+    "echo now auth",
+    "ls -lart",
+    //"gcloud config set project my-project-70505",
+    //"gcloud auth activate-service-account --key-file=/mydir/vol/my-project-70505-c03a97524e24.json --project=my-project-70505",
+    "cd /src",
+    //"helm install my-chart/",
+    "echo done-auth",
+
+  ]
+   j.run();
+});
+
+
+
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-plugin-react": "^7.13.0"
+  }
+
+
+
